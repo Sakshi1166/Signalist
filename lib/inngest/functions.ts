@@ -60,7 +60,8 @@ export const sendDailyNewsSummary = inngest.createFunction(
         // Step #2: For each user, get watchlist symbols -> fetch news (fallback to general)
         const results = await step.run('fetch-user-news', async () => {
             const perUser: Array<{ user: UserForNewsEmail; articles: MarketNewsArticle[] }> = [];
-            for (const user of users as UserForNewsEmail[]) {
+            const typedUsers = users as UserForNewsEmail[];
+            for (const user of typedUsers) {
                 try {
                     const symbols = await getWatchlistSymbolsByEmail(user.email);
                     let articles = await getNews(symbols);
@@ -78,7 +79,7 @@ export const sendDailyNewsSummary = inngest.createFunction(
                 }
             }
             return perUser;
-        });
+        }) as Array<{ user: UserForNewsEmail; articles: MarketNewsArticle[] }>;
 
         // Step #3: (placeholder) Summarize news via AI
         const userNewsSummaries: { user: UserForNewsEmail; newsContent: string | null }[] = [];
@@ -98,7 +99,7 @@ export const sendDailyNewsSummary = inngest.createFunction(
                 const newsContent = (part && 'text' in part ? part.text : null) || 'No market news.'
 
                 userNewsSummaries.push({ user, newsContent });
-            } catch (e) {
+            } catch {
                 console.error('Failed to summarize news for : ', user.email);
                 userNewsSummaries.push({ user, newsContent: null });
             }
