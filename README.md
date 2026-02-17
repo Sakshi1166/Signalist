@@ -1,6 +1,6 @@
 # Signalist - Stock Market Intelligence Platform
 
-A modern, full-stack stock market analysis and portfolio tracking application built with Next.js, React, and TypeScript. Signalist provides real-time market data, advanced charting tools, personalized news summaries, and intelligent watchlist management for individual investors.
+A modern, full-stack stock market analysis and portfolio tracking application built with Next.js, React, and TypeScript. Signalist provides real-time market data, advanced charting tools and personalized news summaries for individual investors.
 
 ## 🎯 Features
 
@@ -8,7 +8,6 @@ A modern, full-stack stock market analysis and portfolio tracking application bu
 - **Real-Time Market Overview** - Interactive TradingView widgets displaying market heatmap, overview, quotes, and timeline
 - **Stock Search & Discovery** - Advanced search with autocomplete and keyboard shortcuts (Cmd/Ctrl + K)
 - **Detailed Stock Analysis** - Multi-chart view including candlestick charts, technical analysis, and company financials
-- **Personal Watchlist** - Save and track favorite stocks with a persistent watchlist
 - **Market News & Headlines** - Curated news feed powered by Finnhub API
 
 ### User Experience
@@ -171,7 +170,6 @@ Reusable component for embedding professional chart widgets from TradingView:
 Command palette-style search with:
 - Keyboard shortcut (Cmd/Ctrl + K)
 - Real-time stock filtering from Finnhub
-- Watchlist status indicators
 - Direct links to stock detail pages
 
 ### Authentication Flow
@@ -271,10 +269,6 @@ Contributions are welcome! Please:
 2. Make your changes
 3. Submit a pull request
 
-## 📄 License
-
-[Add your license information here]
-
 ## 🙋 Support
 
 For issues and questions:
@@ -293,5 +287,3 @@ For issues and questions:
 - [Tailwind CSS](https://tailwindcss.com/docs)
 
 ---
-
-Built with ❤️ by [Your Team]
